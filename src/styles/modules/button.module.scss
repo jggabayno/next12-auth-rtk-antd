@@ -1,0 +1,26 @@
+@use '../helpers' as *;
+
+._ {
+    font-size: 1rem;
+    padding: .8rem 1rem;
+
+    border-radius: .3rem;
+
+    font-weight: 700;
+    color: $light;
+    cursor: pointer;
+
+    &:hover {
+        opacity: .9;
+    }
+
+    &:disabled {
+        opacity: .5;
+    }
+    
+    @include viewport('7') {
+        font-size: 17px;
+        padding: 0.7em 1.2em;
+    }
+
+}

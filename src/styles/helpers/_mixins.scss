@@ -1,0 +1,25 @@
+$breakpoints: (
+//'4': 480px,
+  '7': 768px,
+  '9':  992px,
+  '12':  1200px
+);
+ 
+@mixin viewport($breakpoint) {
+  @media (min-width: map-get($breakpoints, $breakpoint)) {
+    @content;
+  }
+}
+
+$z-indexes: (
+  'scroll_up_progress_bar',
+  'logo',
+  'menu',
+  'nav',
+  'header',
+  'main'
+);
+ 
+@function z-index($name) {
+  @return (length($z-indexes) - index($z-indexes, $name))+1;
+}

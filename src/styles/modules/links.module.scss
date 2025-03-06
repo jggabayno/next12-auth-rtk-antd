@@ -1,0 +1,29 @@
+@use '../helpers' as *;
+
+._ {
+
+    display: grid;
+    gap: 1.4rem;
+    padding: 1rem 0;
+    margin: 0;
+    list-style-type: none;
+
+    li {
+
+        &.active a {
+            color: $primary;
+        }
+
+        a {
+            font-size: 1rem;
+            color: $dark;
+        }
+
+        &:not(.active) a {
+            &:hover {
+                opacity: .9;
+            }
+        }
+    }
+
+}

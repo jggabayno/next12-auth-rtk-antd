@@ -1,0 +1,12 @@
+@use '../helpers' as *;
+
+._ {
+    cursor: pointer;
+    line-height: 0;
+    z-index: z-index('logo');
+
+    a {
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+}

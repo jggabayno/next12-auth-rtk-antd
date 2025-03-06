@@ -1,0 +1,31 @@
+@forward 'globals';
+@use './helpers' as *;
+
+body {
+
+  .inner {
+    padding: 0 1.5em;
+
+    @include viewport('7') {
+      padding: 0 5em;
+    }
+
+    @include viewport('9') {
+      width: 85%;
+      margin: 0 auto;
+      padding: 0;
+  }
+
+}
+}
+
+.scroll_up_progress_bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #A43FF4;
+  height: .16rem;
+  transform-origin: 0%;
+  z-index: z-index('scroll_up_progress_bar');
+}

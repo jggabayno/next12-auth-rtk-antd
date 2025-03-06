@@ -1,0 +1,193 @@
+@import '../styles/abstract/variables';
+
+
+._ {
+
+    display: grid;
+    grid-template-columns: min-content 1fr max-content;
+    grid-template-rows: min-content min-content min-content;
+    grid-template-areas: 'title . btn_add_new_patient' 'filter . sort' 'patient_card patient_card patient_card';
+    gap: 1.6rem;
+
+    .title {
+        grid-area: title;
+
+        font-size: 1.4rem;
+        font-weight: 500;
+    }
+
+    .btn_add_new_patient {
+        grid-area: btn_add_new_patient;
+        width: fit-content;
+        justify-self: flex-end;
+        
+    }
+
+    .filter {
+        grid-area: filter;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+
+        > .label {
+            font-size: 1rem;
+            color: #aeaeae;
+        }
+
+        .procedure_inner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: .7rem;
+
+            .label {
+                font-size: .9rem;
+            
+            }
+ 
+        }
+    }
+
+    .sort {
+        grid-area: sort;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+
+        .label {
+            font-size: 1rem;
+            color: #aeaeae;
+        }
+    }
+
+
+    .patient_cards {
+        grid-area: patient_card;
+
+    
+        .checkbox_group {
+            display: grid;
+            align-items: center;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
+    
+        }
+
+        .selected_patient_count_text_and_delete_btn {
+            padding-bottom: 1rem;
+            display: flex;
+            gap: .7rem;
+        }
+
+        .patient_card {
+
+            padding: 1.6rem;
+            border-radius: 0.625rem;
+            background: $light;
+            box-shadow: 0px 0px 250px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: -4rem;
+                right: -2rem;
+                width: 12rem;
+                height: 12rem;
+                border-radius: 50%;
+                background: #2196F3;
+                opacity: .05;
+                z-index: -1;
+            }
+
+            .ani {
+                position: relative;
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                padding-bottom: 2.5rem;
+
+                .avatar {
+                    width: 3rem;
+                    height: 3rem;
+                    margin: 0;
+
+                    img {
+                        object-fit: scale-down;
+                    }
+                }
+
+                .name {
+                    font-size: 1rem;
+                    color: $primary;
+                    margin: 0;
+                    cursor: pointer;
+
+                    &:hover {
+                        opacity: .8;
+                    }
+                }
+
+                .unique_identifier {
+                    font-size: .9rem;
+                    color: #bebebe;
+                }
+
+                .checkbox {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                }
+
+            }
+
+            .info {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+                gap: 1.2rem 1rem;
+
+                .key {
+                    font-size: 0.75rem;
+                    color: #bebebe;
+                }
+
+
+                .value {
+                    font-size: .8rem;
+                    font-weight: 500;
+                }
+            }
+
+            .actions {
+                padding-top: 4rem;
+                display: flex;
+                gap: 1rem;
+
+                > div {
+                    background: $primary;
+                    width: 1.6rem;
+                    height: 1.6rem;
+                    border-radius: 50%;
+                    display: grid;
+                    place-items: center;
+                    cursor: pointer;
+                    &:hover {
+                        opacity: .8;
+                    }
+
+                    svg {
+                        color: $light;
+                  
+                    }
+                }
+            }
+
+        }
+    }
+
+ 
+ 
+}

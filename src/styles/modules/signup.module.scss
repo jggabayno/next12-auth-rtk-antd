@@ -1,0 +1,74 @@
+@import '../helpers/';
+
+._
+{
+
+  display: grid;
+  place-items: center;
+ 
+
+  form
+  {
+    padding-top: 4rem;
+    min-width : 20rem;
+
+    .title
+    {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .title_support
+    {
+      font-size: 1rem;
+      display: block;
+      color: #545353;
+      padding-bottom : 2rem; 
+    }
+
+    .login_invalid_credential
+    {
+      min-height  : 1.4rem;
+      font-size   : .7rem;
+      color       : #ff0000;
+      margin-bottom: 1rem;
+    }
+    
+    .actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+          
+  }
+
+  @include viewport('9') {
+    
+    justify-content: flex-start;
+    align-items: flex-end;
+
+    form {
+ 
+    .title
+    {
+      font-size: 2.8rem;
+    }
+
+    .title_support
+    {
+      font-size: 1.1rem;
+      margin-bottom : 1.2rem; 
+    }
+
+    > div {
+      width: 80%;
+    }
+
+    }
+
+
+  }
+
+
+  
+}

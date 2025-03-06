@@ -1,0 +1,68 @@
+@use '../helpers' as *;
+
+._ {
+
+    width: 100%;
+    height: 3.8rem;
+    z-index: z-index('header');
+    
+    .inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #222;
+            padding-bottom: 1.4rem;
+            z-index: z-index('nav');
+
+            &.op {
+                transition: all .3s ease;
+                transform: translateY(0);
+                opacity: 1;
+            }
+    
+            &.cl {
+                transform: translateY(-100%);
+                opacity: 0; 
+            }
+        
+            ul {
+                margin-top: 4rem;
+            }
+        
+        }
+    
+        .menu {
+            width: 1.6em;
+            cursor: pointer;
+            z-index: z-index('menu');
+        }
+
+    }
+
+    @include viewport('9') {
+
+        .inner nav {
+            position: unset;
+            width: auto;
+            margin: 0;
+            padding: 0;
+            background: transparent;
+                 
+            ul {
+                display: flex;
+                margin: 0;
+                padding: 0;
+                gap: 2.4rem;
+            }
+        }
+
+    }
+
+} 
